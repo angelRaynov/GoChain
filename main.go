@@ -23,9 +23,9 @@ func main() {
 	chain.AddBlock("third block after genesis")
 
 	for _, block := range chain.blocks {
-		log.Printf("Prev hash: %x\n",block.PrevHash)
-		log.Printf("Data: %s\n",block.Data)
-		log.Printf("Hash: %x\n",block.Hash)
+		log.Printf("Prev hash: %x\n", block.PrevHash)
+		log.Printf("Data: %s\n", block.Data)
+		log.Printf("Hash: %x\n", block.Hash)
 	}
 }
 
@@ -51,11 +51,11 @@ func CreateBlock(data string, prevHash []byte) *Block {
 	return block
 }
 
-func (chain *BlockChain) AddBlock(data string)  {
+func (chain *BlockChain) AddBlock(data string) {
 	//get the last block
-	prevBlock := chain.blocks[len(chain.blocks) - 1]
+	prevBlock := chain.blocks[len(chain.blocks)-1]
 
-	newBlock := CreateBlock(data,prevBlock.Hash)
+	newBlock := CreateBlock(data, prevBlock.Hash)
 
 	chain.blocks = append(chain.blocks, newBlock)
 }
